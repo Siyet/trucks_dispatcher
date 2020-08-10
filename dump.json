@@ -1,0 +1,60 @@
+[
+  {
+    "model": "unloading.trackmodel",
+    "pk": 1,
+    "fields": { "name": "БЕЛАЗ", "max_load_capacity": 120000 }
+  },
+  {
+    "model": "unloading.trackmodel",
+    "pk": 2,
+    "fields": { "name": "Komatsu", "max_load_capacity": 110000 }
+  },
+  {
+    "model": "unloading.track",
+    "pk": 1,
+    "fields": {
+      "name": "101",
+      "model": 1,
+      "contents": {
+        "weight": 100000,
+        "composition": { "Fe": 67000, "SiO2": 32000 }
+      }
+    }
+  },
+  {
+    "model": "unloading.track",
+    "pk": 2,
+    "fields": {
+      "name": "102",
+      "model": 1,
+      "contents": {
+        "weight": 125000,
+        "composition": { "Fe": 81250, "SiO2": 37500 }
+      }
+    }
+  },
+  {
+    "model": "unloading.track",
+    "pk": 3,
+    "fields": {
+      "name": "K103",
+      "model": 2,
+      "contents": {
+        "weight": 120000,
+        "composition": { "Fe": 74400, "SiO2": 42000 }
+      }
+    }
+  },
+  {
+    "model": "unloading.storage",
+    "pk": 1,
+    "fields": {
+      "name": "Склад",
+      "polygon": "SRID=4326;POLYGON ((30 10, 40 40, 20 40, 10 20, 30 10))",
+      "contents": {
+        "weight": 900000,
+        "composition": { "Fe": 585000, "SiO2": 306000 }
+      }
+    }
+  }
+]

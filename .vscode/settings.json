@@ -1,0 +1,24 @@
+{
+    "cSpell.language": "en,ru",
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+      "--max-line-length=120"
+    ],
+    "python.linting.enabled": true,
+    "python.formatting.provider": "autopep8",
+    "python.formatting.autopep8Args": [
+      "--max-line-length=120"
+    ],
+    "editor.formatOnSave": true,
+    "files.eol": "\n",
+    "python.testing.pytestEnabled": true,
+    "python.testing.pytestArgs": [
+      "-p",
+      "no:cacheprovider",
+      "-v",
+      "--junitxml=unit_test_result.xml",
+      "--nomigrations"
+    ],
+    "python.pythonPath": "venv/bin/python"
+  }

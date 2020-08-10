@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Разгрузка</title>
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      table {
+        background-color: #cfe2f3;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        border-bottom: 1px solid black;
+      }
+      td,
+      th {
+        padding: 4px 8px;
+        border-right: 1px solid black;
+      }
+      th {
+        border-bottom: 1px solid black;
+      }
+      button {
+        margin: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/unload" method="post">
+      <table cellspacing="0">
+        <thead>
+          <tr>
+            <th>Бортовой номер</th>
+            <th>Модель</th>
+            <th>Макс. грузоподъёмность, т</th>
+            <th>Текущий вес, т</th>
+            <th>Перегруз, %</th>
+            <th>Координаты разгрузки (x,y)</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for track in tracks %}
+          <tr>
+            <td>{{track.name}}</td>
+            <td>{{track.model.name}}</td>
+            <td>{{track.getMaxLoadCapacity}}</td>
+            <td>{{track.getContentsWeight}}</td>
+            <td>{{track.getOverloading}}</td>
+            <td><input type="text" name="track-{{track.id}}" /></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <button type="submit">Рассчитать</button>
+    </form>
+  </body>
+</html>
